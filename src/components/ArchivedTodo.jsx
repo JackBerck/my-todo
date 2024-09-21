@@ -69,7 +69,7 @@ export default function ArchivedTodo({
                       key={todo.id}
                     >
                       <h2 className="text-lg font-bold">{todo.title}</h2>
-                      <p>{todo.description}</p>
+                      <p>{todo.body}</p>
                       <div className="mt-2 flex items-center gap-2">
                         <button
                           type="button"

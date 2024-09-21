@@ -6,11 +6,11 @@ export default function EditTodoForm({
   handleCloseEdit,
 }) {
   const [title, setTitle] = useState(todo.title);
-  const [description, setDescription] = useState(todo.description);
+  const [body, setBody] = useState(todo.body);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleEditTodo(todo.id, { title, description });
+    handleEditTodo(todo.id, { title, body });
   };
 
   return (
@@ -69,8 +69,8 @@ export default function EditTodoForm({
               <textarea
                 id="todo_body"
                 name="todo_body"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
                 className="peer bg-transparent h-16 w-full rounded-lg text-dark-base placeholder-transparent ring-2 px-2 ring-dark-base focus:ring-purple-base focus:outline-none"
               />
               <label

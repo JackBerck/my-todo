@@ -64,7 +64,7 @@ export default function App() {
           ? {
               ...todo,
               title: updatedTodo.title,
-              description: updatedTodo.description,
+              body: updatedTodo.body,
             }
           : todo
       )
@@ -103,7 +103,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="max-w-screen-sm mx-auto px-4 py-4 md:px-12 md:py-12 md:shadow-lg md:bg-white-base mt-24">
+    <div className="max-w-screen-sm mx-auto px-4 py-4 md:px-12 md:py-12 md:shadow-lg mt-24">
       <Title>Catatan Harian</Title>
       <TodoTitle
         handleSearch={handleSearch}

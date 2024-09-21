@@ -23,8 +23,9 @@ export default function AddTodoForm({ addTodo }) {
     const todo = {
       id: +new Date(),
       title: form.elements.todo_title.value,
-      description: form.elements.todo_body.value,
+      body: form.elements.todo_body.value,
       archived: isChecked,
+      createAt: new Date(),
     };
 
     addTodo(todo);
