@@ -4,6 +4,7 @@ export default function TodoList({
   todos,
   handleDeleteTodo,
   handleArchiveTodo,
+  handleOpenEdit,
 }) {
   return (
     <div className="flex flex-col gap-4 border-2 rounded-md border-dark-base p-2 mt-4">
@@ -21,6 +22,14 @@ export default function TodoList({
                 <h2 className="text-lg font-bold">{todo.title}</h2>
                 <p>{todo.description}</p>
                 <div className="mt-2 flex items-center gap-2">
+                  <button
+                    type="button"
+                    name="edit"
+                    className="bg-purple-base text-white-base px-3 py-2 text-sm rounded-md"
+                    onClick={() => handleOpenEdit(todo)}
+                  >
+                    Edit
+                  </button>
                   <button
                     type="button"
                     name="delete"

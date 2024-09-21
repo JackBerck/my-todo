@@ -35,7 +35,7 @@ export default function AddTodoForm({ addTodo }) {
     <>
       <button
         onClick={toggleModal}
-        className="block text-white-base bg-purple-base focus:outline-none font-medium rounded-lg text-sm px-2 py-2.5 text-center"
+        className="block text-white-base bg-purple-base focus:outline-none font-medium rounded-lg md:px-2 md:py-2.5 text-center text-sm"
         type="button"
       >
         Tambahkan catatan

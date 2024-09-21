@@ -9,7 +9,7 @@ export default function SearchTodo({ onSearch }) {
 
   return (
     <form action="" className="w-8/12">
-      <div className="relative">
+      <div className="relative text-sm md:text-base">
         <input
           type="text"
           id="todo_search"

@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import TodoTitle from "../components/TodoTitle";
 import Title from "../components/Title";
 import TodoList from "../components/TodoList";
+import EditTodoForm from "../components/EditTodoForm";
 
 export default function App() {
   const [searchValue, setSearchValue] = useState(""); // State untuk menyimpan nilai search
   const [todos, setTodos] = useState([]); // State untuk menyimpan data todo
+  const [isEditing, setIsEditing] = useState(false); // State untuk mengecek apakah sedang dalam mode edit
+  const [editTodo, setEditTodo] = useState({}); // State untuk menyimpan data todo yang akan diedit
 
   // handleSearch berfungsi untuk mengubah nilai searchValue sesuai dengan input yang dimasukkan oleh pengguna.
   const handleSearch = (value) => {
@@ -53,6 +56,31 @@ export default function App() {
     );
   };
 
+  // handleEditTodo berfungsi untuk mengubah data todo dari state todos berdasarkan id.
+  const handleEditTodo = (id, updatedTodo) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              title: updatedTodo.title,
+              description: updatedTodo.description,
+            }
+          : todo
+      )
+    );
+    setIsEditing(false);
+  };
+
+  const handleOpenEdit = (todo) => {
+    setEditTodo(todo);
+    setIsEditing(true);
+  };
+
+  const handleCloseEdit = () => {
+    setIsEditing(false);
+  };
+
   // filteredTodos berfungsi untuk menyaring data todos berdasarkan nilai searchValue.
   const filteredTodos = todos.filter((todo) => {
     return todo.title.toLowerCase().includes(searchValue.toLowerCase());
@@ -62,21 +90,20 @@ export default function App() {
     return todo.archived;
   });
 
-  // useEffect berfungsi untuk menyimpan data todos ke dalam sessionStorage setiap kali terjadi perubahan pada state todos.
+  // Gunakan localStorage sebagai alternatif
   React.useEffect(() => {
-    sessionStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  // useEffect berfungsi untuk mengambil data todos dari sessionStorage saat aplikasi pertama kali dijalankan.
   React.useEffect(() => {
-    const storedTodos = sessionStorage.getItem("todos");
+    const storedTodos = localStorage.getItem("todos");
     if (storedTodos) {
       setTodos(JSON.parse(storedTodos));
     }
   }, []);
 
   return (
-    <div className="max-w-screen-sm mx-auto px-12 py-12 shadow-lg bg-white-base mt-24">
+    <div className="max-w-screen-sm mx-auto px-4 py-4 md:px-12 md:py-12 md:shadow-lg md:bg-white-base mt-24">
       <Title>Catatan Harian</Title>
       <TodoTitle
         handleSearch={handleSearch}
@@ -89,7 +116,15 @@ export default function App() {
         todos={filteredTodos}
         handleArchiveTodo={handleArchiveTodo}
         handleDeleteTodo={handleDeleteTodo}
+        handleOpenEdit={handleOpenEdit}
       />
+      {isEditing && (
+        <EditTodoForm
+          todo={editTodo}
+          handleEditTodo={handleEditTodo}
+          handleCloseEdit={handleCloseEdit}
+        />
+      )}
     </div>
   );
 }
