@@ -103,15 +103,17 @@ export default function App() {
   }, []);
 
   return (
-    <div className="max-w-screen-sm mx-auto px-4 py-4 md:px-12 md:py-12 md:shadow-lg mt-24">
-      <Title>Catatan Harian</Title>
-      <TodoTitle
-        handleSearch={handleSearch}
-        handleAddTodo={handleAddTodo}
-        archivedTodos={archivedTodos}
-        handleDeleteTodo={handleDeleteTodo}
-        handleUnarchiveTodo={handleUnarchiveTodo}
-      />
+    <>
+      <div className="max-w-screen-sm mx-auto px-4 py-4 md:px-12 md:py-12 md:shadow-lg mt-24">
+        <Title>Catatan Harian</Title>
+        <TodoTitle
+          handleSearch={handleSearch}
+          handleAddTodo={handleAddTodo}
+          archivedTodos={archivedTodos}
+          handleDeleteTodo={handleDeleteTodo}
+          handleUnarchiveTodo={handleUnarchiveTodo}
+        />
+      </div>
       <TodoList
         todos={filteredTodos}
         handleArchiveTodo={handleArchiveTodo}
@@ -125,6 +127,6 @@ export default function App() {
           handleCloseEdit={handleCloseEdit}
         />
       )}
-    </div>
+    </>
   );
 }

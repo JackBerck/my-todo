@@ -7,6 +7,13 @@ export default function EditTodoForm({
 }) {
   const [title, setTitle] = useState(todo.title);
   const [body, setBody] = useState(todo.body);
+  const maxTitleLength = 50;
+
+  const handleTitleChange = (event) => {
+    if (event.target.value.length <= maxTitleLength) {
+      setTitle(event.target.value);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,6 +71,9 @@ export default function EditTodoForm({
               >
                 Masukkan judul catatan...
               </label>
+              <p className="text-sm text-gray-500">
+                {maxTitleLength - title.length} karakter tersisa
+              </p>
             </div>
             <div className="relative">
               <textarea

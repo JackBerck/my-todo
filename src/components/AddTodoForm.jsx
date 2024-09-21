@@ -17,19 +17,22 @@ export default function AddTodoForm({ addTodo }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target;
+    try {
+      const form = event.target;
+      const isChecked = form.elements.todo_archive.checked;
+      const todo = {
+        id: +new Date(),
+        title: form.elements.todo_title.value,
+        body: form.elements.todo_body.value,
+        archived: isChecked,
+        createAt: new Date().toLocaleString(),
+      };
 
-    const isChecked = event.target.elements.todo_archive.checked;
-    const todo = {
-      id: +new Date(),
-      title: form.elements.todo_title.value,
-      body: form.elements.todo_body.value,
-      archived: isChecked,
-      createAt: new Date(),
-    };
-
-    addTodo(todo);
-    toggleModal();
+      addTodo(todo);
+      toggleModal();
+    } catch (error) {
+      console.error("Error creating todo:", error);
+    }
   };
 
   return (

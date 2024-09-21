@@ -7,7 +7,7 @@ export default function TodoList({
   handleOpenEdit,
 }) {
   return (
-    <div className="flex flex-col gap-4 border-2 rounded-md border-dark-base p-2 mt-4">
+    <div className="max-w-screen-xl rounded-md p-2 mt-4 mx-auto flex flex-wrap gap-8 justify-between">
       {todos.length === 0 && (
         <p className="text-center text-lg font-bold">Tidak ada catatan</p>
       )}
@@ -16,9 +16,12 @@ export default function TodoList({
           (todo) =>
             todo.archived === false && (
               <div
-                className="border-b-2 border-b-purple-base pb-2 p-1 text-justify"
+                className="flex-auto border-b-2 pb-2 p-4 text-justify flex flex-col relative shadow-xl rounded-md"
                 key={todo.id}
               >
+                <small className="absolute top-4 right-4 text-xs">
+                  {todo.createAt}
+                </small>
                 <h2 className="text-lg font-bold">{todo.title}</h2>
                 <p>{todo.body}</p>
                 <div className="mt-2 flex items-center gap-2">
