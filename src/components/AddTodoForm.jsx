@@ -2,9 +2,17 @@ import React, { useState } from "react";
 
 export default function AddTodoForm({ addTodo }) {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const maxTitleLength = 50;
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
+  };
+
+  const handleTitleChange = (event) => {
+    if (event.target.value.length <= maxTitleLength) {
+      setTitle(event.target.value);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -74,6 +82,8 @@ export default function AddTodoForm({ addTodo }) {
                     type="text"
                     id="todo_title"
                     name="todo_title"
+                    value={title}
+                    onChange={handleTitleChange}
                     className="peer bg-transparent h-10 w-full rounded-lg text-dark-base placeholder-transparent ring-2 px-2 ring-dark-base focus:ring-purple-base focus:outline-none"
                     placeholder=""
                   />
@@ -83,6 +93,9 @@ export default function AddTodoForm({ addTodo }) {
                   >
                     Masukkan judul catatan...
                   </label>
+                  <p className="text-sm text-gray-500">
+                    {maxTitleLength - title.length} karakter tersisa
+                  </p>
                 </div>
                 <div className="relative">
                   <textarea
