@@ -29,6 +29,7 @@ export default function AddTodoForm({ addTodo }) {
       };
 
       addTodo(todo);
+      setTitle("");
       toggleModal();
     } catch (error) {
       console.error("Error creating todo:", error);
@@ -107,7 +108,7 @@ export default function AddTodoForm({ addTodo }) {
                     type="text"
                     id="todo_body"
                     name="todo_body"
-                    className="peer bg-transparent h-16 w-full rounded-lg text-dark-base placeholder-transparent ring-2 px-2 ring-dark-base focus:ring-purple-base focus:outline-none"
+                    className="peer bg-transparent h-16 w-full rounded-lg text-dark-base placeholder-transparent ring-2 px-2 ring-dark-base focus:ring-purple-base focus:outline-none pt-1"
                     placeholder=""
                     required
                   />

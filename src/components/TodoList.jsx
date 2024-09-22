@@ -19,7 +19,7 @@ export default function TodoList({
             (todo) =>
               todo.archived === false && (
                 <div
-                  className="flex-auto max-w-sm border-b-2 p-4 pt-7 text-justify flex flex-col relative shadow-xl rounded-md"
+                  className="flex-auto max-w-sm border-b-2 p-4 pt-7 text-justify flex flex-col relative shadow-sm rounded-md"
                   key={todo.id}
                 >
                   <small className="absolute top-4 right-4 text-xs">
