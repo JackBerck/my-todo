@@ -3,10 +3,11 @@ import TodoTitle from "../components/TodoTitle";
 import Title from "../components/Title";
 import TodoList from "../components/TodoList";
 import EditTodoForm from "../components/EditTodoForm";
+import { getInitialData } from "../data/initialData";
 
 export default function App() {
   const [searchValue, setSearchValue] = useState(""); // State untuk menyimpan nilai search
-  const [todos, setTodos] = useState([]); // State untuk menyimpan data todo
+  const [todos, setTodos] = useState(getInitialData); // State untuk menyimpan data todo
   const [isEditing, setIsEditing] = useState(false); // State untuk mengecek apakah sedang dalam mode edit
   const [editTodo, setEditTodo] = useState({}); // State untuk menyimpan data todo yang akan diedit
 

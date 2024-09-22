@@ -16,6 +16,13 @@ export default function AddTodoForm({ addTodo }) {
   };
 
   const handleSubmit = (event) => {
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+
     event.preventDefault();
     try {
       const form = event.target;
@@ -25,7 +32,8 @@ export default function AddTodoForm({ addTodo }) {
         title: form.elements.todo_title.value,
         body: form.elements.todo_body.value,
         archived: isChecked,
-        createAt: new Date().toLocaleString(),
+        // createdAt: new Date().toLocaleDateString("id-ID", options),
+        createdAt: new Date().toISOString(),
       };
 
       addTodo(todo);

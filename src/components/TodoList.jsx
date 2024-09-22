@@ -1,4 +1,5 @@
 import React from "react";
+import { showFormattedDate } from "../data/initialData";
 
 export default function TodoList({
   todos,
@@ -13,17 +14,17 @@ export default function TodoList({
           No todos found
         </p>
       )}
-      <div className="max-w-screen-xl rounded-md p-2 mt-4 mx-auto flex flex-wrap gap-8">
+      <div className="max-w-screen-xl rounded-md p-2 mt-4 mx-auto flex flex-wrap gap-8 justify-center">
         {todos.length !== 0 &&
           todos.map(
             (todo) =>
               todo.archived === false && (
                 <div
-                  className="flex-auto max-w-sm border-b-2 p-4 pt-7 text-justify flex flex-col relative shadow-sm rounded-md"
+                  className="flex-initial max-w-xs lg:max-w-sm border-b-2 p-4 pt-7 text-justify flex flex-col relative shadow-sm rounded-md"
                   key={todo.id}
                 >
                   <small className="absolute top-4 right-4 text-xs">
-                    {todo.createAt}
+                    {showFormattedDate(todo.createdAt)}
                   </small>
                   <h2 className="text-lg font-bold">{todo.title}</h2>
                   <p>{todo.body}</p>
