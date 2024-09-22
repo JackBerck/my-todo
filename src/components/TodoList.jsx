@@ -13,7 +13,7 @@ export default function TodoList({
           No todos found
         </p>
       )}
-      <div className="max-w-screen-xl rounded-md p-2 mt-4 mx-auto flex flex-wrap gap-8 justify-between">
+      <div className="max-w-screen-xl rounded-md p-2 mt-4 mx-auto flex flex-wrap gap-8">
         {todos.length !== 0 &&
           todos.map(
             (todo) =>
