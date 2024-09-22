@@ -29,9 +29,7 @@ export default function EditTodoForm({
       <div className="relative p-4 w-full max-w-xl max-h-full">
         <div className="relative bg-white-base rounded-lg shadow">
           <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
-            <h3 className="text-xl font-semibold text-gray-900">
-              Edit Catatan
-            </h3>
+            <h3 className="text-xl font-semibold text-gray-900">Edit todo</h3>
             <button
               type="button"
               className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
@@ -69,10 +67,10 @@ export default function EditTodoForm({
                 htmlFor="todo_title"
                 className="absolute cursor-text left-2 -top-3 text-sm text-dark-base bg-white-base mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-dark-base peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-purple-base peer-focus:text-sm transition-all z-10"
               >
-                Masukkan judul catatan...
+                Input todo title...
               </label>
               <p className="text-sm text-gray-500">
-                {maxTitleLength - title.length} karakter tersisa
+                {maxTitleLength - title.length} characters left
               </p>
             </div>
             <div className="relative">
@@ -87,14 +85,14 @@ export default function EditTodoForm({
                 htmlFor="todo_body"
                 className="absolute cursor-text left-2 -top-3 text-sm text-dark-base bg-white-base mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-dark-base peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-purple-base peer-focus:text-sm transition-all z-10"
               >
-                Masukkan deskripsi catatan...
+                Input todo description...
               </label>
             </div>
             <button
               type="submit"
               className="bg-purple-base text-white-base px-4 py-2 text-sm rounded-md"
             >
-              Simpan Perubahan
+              Save changes
             </button>
           </form>
         </div>

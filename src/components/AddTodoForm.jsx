@@ -43,7 +43,7 @@ export default function AddTodoForm({ addTodo }) {
         className="block text-white-base bg-purple-base focus:outline-none font-medium rounded-lg md:px-2 md:py-2.5 text-center text-sm"
         type="button"
       >
-        Tambahkan catatan
+        Add new todo
       </button>
 
       {isModalOpen && (
@@ -56,7 +56,7 @@ export default function AddTodoForm({ addTodo }) {
             <div className="relative bg-white-base rounded-lg shadow">
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
                 <h3 className="text-xl font-semibold text-gray-900 ">
-                  Tambahkan Catatan Baru
+                  Add new todo
                 </h3>
                 <button
                   type="button"
@@ -97,10 +97,10 @@ export default function AddTodoForm({ addTodo }) {
                     htmlFor="todo_title"
                     className="absolute cursor-text left-2 -top-3 text-sm text-dark-base bg-white-base mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-dark-base peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-purple-base peer-focus:text-sm transition-all z-10"
                   >
-                    Masukkan judul catatan...
+                    Input todo title...
                   </label>
                   <p className="text-sm text-gray-500">
-                    {maxTitleLength - title.length} karakter tersisa
+                    {maxTitleLength - title.length} characters left
                   </p>
                 </div>
                 <div className="relative">
@@ -116,7 +116,7 @@ export default function AddTodoForm({ addTodo }) {
                     htmlFor="todo_body"
                     className="absolute cursor-text left-2 -top-3 text-sm text-dark-base bg-white-base mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-dark-base peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-purple-base peer-focus:text-sm transition-all"
                   >
-                    Masukkan deskripsi catatan...
+                    Input todo description...
                   </label>
                 </div>
                 <div className="flex items-center">
@@ -130,14 +130,14 @@ export default function AddTodoForm({ addTodo }) {
                     htmlFor="todo_archive"
                     className="ms-2 text-sm font-medium text-dark-base"
                   >
-                    Arsipkan catatan?
+                    Archive this todo?
                   </label>
                 </div>
                 <button
                   type="submit"
                   className="text-white-base bg-purple-base hover:bg-purple-base font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                 >
-                  Tambah catatan
+                  Add todo
                 </button>
               </form>
             </div>

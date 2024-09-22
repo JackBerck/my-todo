@@ -105,7 +105,7 @@ export default function App() {
   return (
     <>
       <div className="max-w-screen-sm mx-auto px-4 py-4 md:px-12 md:py-12 md:shadow-lg mt-24">
-        <Title>Catatan Harian</Title>
+        <Title>My Todo List</Title>
         <TodoTitle
           handleSearch={handleSearch}
           handleAddTodo={handleAddTodo}

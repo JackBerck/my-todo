@@ -42,7 +42,7 @@ export default function TodoList({
                       className="bg-red-500 text-white-base px-3 py-2 text-sm rounded-md"
                       onClick={() => handleDeleteTodo(todo.id)}
                     >
-                      Hapus
+                      Delete
                     </button>
                     <button
                       type="button"
@@ -50,7 +50,7 @@ export default function TodoList({
                       className="bg-green-500 text-white-base px-3 py-2 text-sm rounded-md"
                       onClick={() => handleArchiveTodo(todo.id)}
                     >
-                      Arsipkan
+                      Archive
                     </button>
                   </div>
                 </div>

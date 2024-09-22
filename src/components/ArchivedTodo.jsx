@@ -18,7 +18,7 @@ export default function ArchivedTodo({
         className="block text-purple-base focus:outline-none font-medium text-sm underline"
         type="button"
       >
-        Cek catatan yang diarsipkan
+        Check archived todos...
       </button>
 
       {isModalOpen && (
@@ -31,7 +31,7 @@ export default function ArchivedTodo({
             <div className="relative bg-white-base rounded-lg shadow">
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
                 <h3 className="text-xl font-semibold text-gray-900 ">
-                  Catatan yang diarsipkan
+                  Archived todos
                 </h3>
                 <button
                   type="button"
@@ -59,7 +59,7 @@ export default function ArchivedTodo({
               <div className="p-4 max-h-[512px] overflow-y-auto">
                 {archivedTodos.length === 0 && (
                   <p className="text-center text-lg font-bold p-4">
-                    Tidak ada catatan yang diarsipkan
+                    There are no archived todos.
                   </p>
                 )}
                 {archivedTodos.length !== 0 &&
@@ -77,7 +77,7 @@ export default function ArchivedTodo({
                           className="bg-red-500 text-white-base px-3 py-2 text-sm rounded-md"
                           onClick={() => handleDeleteTodo(todo.id)}
                         >
-                          Hapus
+                          Delete
                         </button>
                         <button
                           type="button"
@@ -85,7 +85,7 @@ export default function ArchivedTodo({
                           className="bg-green-500 text-white-base px-3 py-2 text-sm rounded-md"
                           onClick={() => handleUnarchiveTodo(todo.id)}
                         >
-                          Kembalikan
+                          Unarchive
                         </button>
                       </div>
                     </div>

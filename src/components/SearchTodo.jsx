@@ -22,7 +22,7 @@ export default function SearchTodo({ onSearch }) {
           htmlFor="todo_search"
           className="absolute cursor-text left-2 -top-3 text-sm text-dark-base bg-white-base mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-dark-base peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-purple-base peer-focus:text-sm transition-all z-10"
         >
-          Cari catatan...
+          Search todo...
         </label>
       </div>
     </form>
