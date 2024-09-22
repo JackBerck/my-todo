@@ -56,7 +56,7 @@ export default function ArchivedTodo({
                   <span className="sr-only">Close modal</span>
                 </button>
               </div>
-              <div className="p-4">
+              <div className="p-4 max-h-[512px] overflow-y-auto">
                 {archivedTodos.length === 0 && (
                   <p className="text-center text-lg font-bold p-4">
                     Tidak ada catatan yang diarsipkan

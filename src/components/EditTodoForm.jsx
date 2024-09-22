@@ -62,7 +62,7 @@ export default function EditTodoForm({
                 id="todo_title"
                 name="todo_title"
                 value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={handleTitleChange} // Menggunakan handleTitleChange untuk membatasi karakter
                 className="peer bg-transparent h-10 w-full rounded-lg text-dark-base placeholder-transparent ring-2 px-2 ring-dark-base focus:ring-purple-base focus:outline-none"
               />
               <label
@@ -80,7 +80,7 @@ export default function EditTodoForm({
                 id="todo_body"
                 name="todo_body"
                 value={body}
-                onChange={(e) => setBody(e.target.value)}
+                onChange={(e) => setBody(e.target.value)} // Menggunakan setBody untuk menangani perubahan pada textarea
                 className="peer bg-transparent h-16 w-full rounded-lg text-dark-base placeholder-transparent ring-2 px-2 ring-dark-base focus:ring-purple-base focus:outline-none"
               />
               <label

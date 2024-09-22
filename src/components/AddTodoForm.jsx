@@ -90,6 +90,7 @@ export default function AddTodoForm({ addTodo }) {
                     onChange={handleTitleChange}
                     className="peer bg-transparent h-10 w-full rounded-lg text-dark-base placeholder-transparent ring-2 px-2 ring-dark-base focus:ring-purple-base focus:outline-none"
                     placeholder=""
+                    required
                   />
                   <label
                     htmlFor="todo_title"
@@ -108,6 +109,7 @@ export default function AddTodoForm({ addTodo }) {
                     name="todo_body"
                     className="peer bg-transparent h-16 w-full rounded-lg text-dark-base placeholder-transparent ring-2 px-2 ring-dark-base focus:ring-purple-base focus:outline-none"
                     placeholder=""
+                    required
                   />
                   <label
                     htmlFor="todo_body"
