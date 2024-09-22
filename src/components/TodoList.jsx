@@ -10,7 +10,7 @@ export default function TodoList({
     <>
       {todos.length === 0 && (
         <p className="mt-8 text-center text-lg md:text-3xl font-bold">
-          Tidak ada catatan
+          No todos found
         </p>
       )}
       <div className="max-w-screen-xl rounded-md p-2 mt-4 mx-auto flex flex-wrap gap-8 justify-between">
